@@ -38,6 +38,7 @@ STATE_QUIT = 3
 STATE_CLEAR = 5
 STATE_DEAD = 6
 STATE_LEADERBOARD = 7
+STATE_QUESTION = 8
 
 # Current state
 game_state = STATE_MENU
@@ -47,7 +48,9 @@ menu_options = [
     "ゲームスタート",
     "設定",
     "遊び方",
-    "終わる"
+    "終わる",
+    # "ランキング",
+    # "名前登録"
 ]
 
 # Loop through the menu options and create a menu item for each one
@@ -212,3 +215,18 @@ SETTING_MENU_TEXT2 = 'ゲームモード'
 HELP_MENU_TEXT = '遊び方\n1. 矢印キーでプレイヤーを移動，スペースキーで弾を発射\n2. スコアが50を超えたら，ボスが出現\n3. 5回攻撃を受けると，ゲームオーバー\n4. 難易度は，イージー，ミディアム，ハードの3つ\n\nエネミーは3種類\nエネミー1を倒すと10点，エネミー2を倒すと50点'
 GAME_OVER_TEXT = 'ゲームオーバー!!\nもう一度遊びますか？'
 GAME_CLEAR_TEXT = 'クリアおめでとう!!!!!'
+
+# ランキングに登録する際の質問画面
+question_options = [
+    "ランキングに登録しますか？",
+    "はい",
+    "いいえ"
+]
+
+question_items = []
+for index, option in enumerate(retry_options):
+    text = menu_font.render(option, True, (255, 255, 255))
+    rect = text.get_rect()
+    rect.centerx = screen.get_rect().centerx
+    rect.centery = screen.get_rect().centery + index * 50
+    retry_items.append((option, text, rect))

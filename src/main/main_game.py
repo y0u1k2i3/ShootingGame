@@ -125,6 +125,7 @@ while running:
                     # Move the menu index down
                     menu_index = (menu_index + 1) % len(variable.menu_items)
 
+                # ゲームスタート処理
                 elif event.key == pygame.K_RETURN:
                     # Check which menu option was selected
                     if menu_index == 0:
