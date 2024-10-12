@@ -1,4 +1,6 @@
 Game Project/src.zip
 .DS_Store
 src/main/__pycache__
+src/main/build
+src/main/dist
 .venv
