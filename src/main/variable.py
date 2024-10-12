@@ -1,12 +1,19 @@
 import pygame
 from pygame import mixer
+import ctypes
 
 # The width and height of Game
 SCREEN_WIDTH = 1600
 SCREEN_HEIGHT = 900
+# user32 = ctypes.windll.user32
+# SCREEN_WIDTH = user32.GetSystemMetrics(0)
+# SCREEN_HEIGHT = user32.GetSystemMetrics(1)
 
 # Initialize Pygame and make window
-screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), pygame.FULLSCREEN)
+# screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
+# SCREEN_WIDTH, SCREEN_HEIGHT = screen.get_size()
+# print(f"Width: {SCREEN_WIDTH}, Height: {SCREEN_HEIGHT}")
 
 pre_bg_img = pygame.image.load("src/assets/bgimg.jpeg")
 bg_img = pygame.transform.scale(pre_bg_img, (SCREEN_WIDTH, SCREEN_HEIGHT))
